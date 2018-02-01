@@ -11,62 +11,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDM9wFYv6BV11f2fkmmqlWhxMAgp4cG8Ao&callback=initMap"
+            async defer></script>
 
-    <script type="text/babel">
-        var PointsTable = React.createClass({
-            render: function() {
-                var rows = [];
-                this.props.points.forEach(function(point) {
-                    rows.push(<Point point={point} />);
-                });
-                return (
-                        <table>
-                            <thead>
-                            <tr>
-                                <th>Longitude</th><th>Altitude</th>
-                            </tr>
-                            </thead>
-                            <tbody>{rows}</tbody>
-                        </table>
-                );
-            }
-        });
-        var Point = React.createClass({
-            render: function() {
-                return (
-                        <tr>
-                            <td>{this.props.point.longitude}</td>
-                            <td>{this.props.point.altitude}</td>
-                        </tr>);
-            }
-        });
-        var App = React.createClass({
+    <script type="text/babel" src="/public/app.jsx"></script>
 
-            loadPointsFromServer: function () {
-                var self = this;
-                $.ajax({
-                    url: "http://localhost:8080/api/points"
-                }).then(function (data) {
-                    self.setState({points: data._embedded.points});
-                });
-            },
-
-            getInitialState: function () {
-                return {points: []};
-            },
-
-            componentDidMount: function () {
-                this.loadPointsFromServer();
-            },
-
-            render() {
-                return ( <PointsTable points={this.state.points}/> );
-            }
-        });
-
-        ReactDOM.render(
-                <App />, document.getElementById('root')
-        );
-    </script>
 </body>
 </html>
