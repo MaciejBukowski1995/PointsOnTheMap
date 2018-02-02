@@ -17,7 +17,7 @@ public class DatabaseLoader implements CommandLineRunner{
 
     @Override
     public void run(String... strings) throws Exception {
-        this.pointsRepository.save(new Point(45.322, 34.3345));
-        this.pointsRepository.save(new Point(15.322, 44.3345));
+        this.pointsRepository.save(new Point(48.322, 2.3345));
+        this.pointsRepository.save(new Point(48.321, 2.33455));
     }
 }
