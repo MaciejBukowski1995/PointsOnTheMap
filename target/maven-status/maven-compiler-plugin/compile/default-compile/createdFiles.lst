@@ -1,0 +1,5 @@
+home/HomeController.class
+home/DatabaseLoader.class
+home/Point.class
+home/PointsRepository.class
+home/Application.class

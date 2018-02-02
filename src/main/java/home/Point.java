@@ -12,11 +12,13 @@ public class Point {
     private @Id @GeneratedValue Long id;
     private double longitude;
     private double altitude;
+    private String name;
 
     private Point() {}
 
-    public Point(double longitude, double altitude) {
+    public Point(double altitude, double longitude, String name) {
         this.longitude = longitude;
         this.altitude = altitude;
+        this.name = name;
     }
 }
