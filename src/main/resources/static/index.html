@@ -32,7 +32,7 @@
                     minZoom: 2
                 });
 
-                $.getJSON( "http://localhost:8080/api/points", function( data) {
+                $.getJSON( "https://points-on-the-map.herokuapp.com/api/points", function( data) {
                     for (let i = 0, len = data._embedded.points.length; i < len; i++) {
                         marker = new google.maps.Marker({
                             position: {lat: data._embedded.points[i].altitude, lng: data._embedded.points[i].longitude},
